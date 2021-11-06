@@ -1,0 +1,66 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+<style>
+
+#myDiv{
+    position: relative;
+}
+.btn2{
+    background-color:orange;
+    position:fixed;
+    bottom:2rem;
+    right: 2rem;
+    z-index: 3;
+}
+i.icon{
+    font-size: 2.4rem;
+}
+a{
+    color: black;
+}
+
+.fa-times{
+    font-size: 1.2rem;
+}
+</style>
+<div style="display:none;" id="myDiv" class="animate-bottom">
+{% for task in tasks %}
+{% if task.complete == True %}
+<div class="alert alert-success alert-dismissible fade show" role="alert">
+      <strike> <i class="fa fa-check" aria-hidden="true"></i>{{task.title}}</strike>
+    <span aria-hidden="true " class=" ml-auto"> <a name="" type="button"  id="" class="" href="{% url 'task-delete' task.id %}" role="button"><i class="fa fa-times" aria-hidden="true"></i></a></span>
+
+  
+  &nbsp;&nbsp;
+  
+
+
+</div>
+
+
+<script>
+  $(".alert").alert();
+</script>
+
+{% else %}
+<div class="alert alert-warning form-inline" role="alert"> 
+    <em>{{task.title}}</em>
+  <div class="mx-auto">
+    <a name="" id="" class=" " href="{% url 'task-update' task.id %}" role="button"><i class="fa fa-edit" aria-hidden="true"></i></a>&nbsp;&nbsp;
+  <a name="" id="" class="" href="{% url 'task-delete' task.id %}" role="button"><i class="fa fa-times" aria-hidden="true"></i></a>
+</div>
+    <div class="ml-auto">
+        <a href="{% url 'task-complete' task.id %}" class="btn btn-secondary mt-2 btn-block-lg">Done</a>
+</div>
+</div>
+{% endif %}
+{% empty %}
+<p class="lead text-white">Click the Plus Icon to add tasks. </p>
+{% endfor %}
+<a name="" id="" class="btn rounded-circle p-1 btn2" href="{% url 'task-create' %}" role="button"><i class="fa fa-plus icon "></i></a>
+</div>
+
+
+{% endblock content %}

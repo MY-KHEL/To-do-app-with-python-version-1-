@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div style="display:none;" id="myDiv" class="animate-bottom">
+<div class="mx-auto ">
+    <form action="" method="post">
+    <h3 class="text-white">Are you sure you want to clear this Task.[{{item}}]</h3>
+        {% csrf_token %}
+        {{form}}
+        <button type="submit" class="btn btn-danger mt-2">Yes</button>
+        <a name="" id="" class="btn btn-outline-warning mt-2" href="{% url 'tasks' %}" role="button">No</a>
+    </form>
+</div>
+    
+</div>
+<script>
+    var form_field = document.getElementsByTagName('input')
+
+for(var form in form_field){
+ form_field[form].className = "form-control"
+}
+    var form_field2 = document.getElementsByTagName('select')
+
+for(var form in form_field2){
+ form_field2[form].className = "form-control"
+}
+</script>
+{% endblock content %}

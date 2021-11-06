@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div style="display:none;" id="myDiv" class="animate-bottom">
+<div class="col-lg-6 mx-auto">
+    <form action="" method="post">
+        {% csrf_token %}
+        {{form}}
+<br>
+        <button type="submit" class="btn btn-warning">Login</button>
+        <a href="{% url 'signup' %}">Don't Have an account?</a>
+    </form>
+</div>
+</div>
+<script>
+       var form_field = document.getElementsByTagName('input')
+
+for(var form in form_field){
+    form_field[form].className = "form-control"
+}
+</script>
+{% endblock content %}
