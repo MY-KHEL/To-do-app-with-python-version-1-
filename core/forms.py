@@ -24,3 +24,7 @@ class SignUpForm(UserCreationForm):
             'password2',
         ]
 
+class Settings(forms.ModelForm):
+    class Meta:
+        model =Theme
+        fields = '__all__'

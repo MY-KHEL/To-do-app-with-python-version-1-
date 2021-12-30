@@ -13,3 +13,26 @@ class Tasks(models.Model):
     
     class Meta:
         ordering = ['complete']
+
+class Theme(models.Model):
+    COLORS=(
+        ('red','red'),
+        ('pink','pink'),
+        ('lightpink','light pink'),
+        ('lightgreen','light green'),
+        ('orange','orange'),
+        ('yellow','yellow'),
+        ('lightgoldenrodyellow','light yellow'),
+        ('green','green'),
+        ('blue','blue'),
+        ('lightblue','light blue'),
+        ('Indigo','indigo'),
+        ('white','white'),
+        ('black','black'),
+        
+
+    )
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
+    background_color = models.CharField(max_length = 150,choices=COLORS)
+    text_color = models.CharField(max_length = 150,choices=COLORS)
+    

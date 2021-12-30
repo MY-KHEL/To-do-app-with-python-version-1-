@@ -2,24 +2,19 @@
 
 {% block content %}
 <style>
-    label:nth-of-type(1){
+      label:nth-of-type(1){
         display: none;
     }
     select#id_user{
         display: none;
     }
-    body{
-       
-    }
-</style>
+</style>  
 <div style="display:none;" id="myDiv" class="animate-bottom">
-   
 <div class="col-md-6 mx-auto ">
-     <h3 class="">Create your Task</h3>
     <form action="" method="post">
         {% csrf_token %}
         {{form}}
-        <button type="submit" class="btn btn-warning mt-2">Create task</button>
+        <button type="submit" class="btn btn-warning mt-2">Adjust settings</button>
     </form>
 </div>
     

@@ -18,12 +18,13 @@ i.icon{
     font-size: 2.4rem;
 }
 a{
-    color: black;
+    color:black;
 }
 
 .fa-times{
     font-size: 1.2rem;
 }
+
 </style>
 <div style="display:none;" id="myDiv" class="animate-bottom">
 {% for task in tasks %}
@@ -57,7 +58,7 @@ a{
 </div>
 {% endif %}
 {% empty %}
-<p class="lead text-white">Click the Plus Icon to add tasks. </p>
+<p class="lead">Click the Plus Icon to add tasks. </p>
 {% endfor %}
 <a name="" id="" class="btn rounded-circle p-1 btn2" href="{% url 'task-create' %}" role="button"><i class="fa fa-plus icon "></i></a>
 </div>

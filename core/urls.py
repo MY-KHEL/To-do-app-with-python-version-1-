@@ -10,5 +10,6 @@ urlpatterns = [
     path('task-delete/<int:pk>/',DeleteTask,name='task-delete'),
     path('task-complete/<int:pk>/',CompleteTasks,name='task-complete'),
     path('signup/',signup,name='signup'),
-    path('accounts/',include('django.contrib.auth.urls'))
+    path('accounts/',include('django.contrib.auth.urls')),
+    path('settings',settings,name='settings')
 ]

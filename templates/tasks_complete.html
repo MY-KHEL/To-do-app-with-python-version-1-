@@ -4,7 +4,7 @@
 <div style="display:none;" id="myDiv" class="animate-bottom">
 <div class=" mx-auto ">
     <form action="" method="POST">
-    <h3 class="text-white">This means you have completed this task. <br>[{{item}}]</h3>
+    <h3 class="">This means you have completed this task. <br>[{{item}}]</h3>
         {% csrf_token %}
         {{form}}
         <button type="submit" class="btn btn-warning mt-2">Yes</button>
